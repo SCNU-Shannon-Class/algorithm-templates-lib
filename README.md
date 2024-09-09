@@ -1,6 +1,7 @@
 # algorithm-templates-lib
 
 ## 基础/通用 Basic
++ [自动取模/Modulo](./自动取模/)
 
 ## 数据结构 Data Structrue
 + [并查集/DSU](./并查集DSU/)
