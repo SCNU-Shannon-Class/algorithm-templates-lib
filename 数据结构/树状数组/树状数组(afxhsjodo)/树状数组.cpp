@@ -19,7 +19,7 @@ int tr[N];
 
 void add(int x, int c)
 {
-    for (int i = x+1; i <= N; i += lowbit(i))tr[i] += c;//×¢ÒâÊÇi<=N,²»ÊÇi<=n£¬x+1ÊÇÎªÁË·ÀÖ¹x=0µÄÇé¿ö£¬x=0Ê±»áËÀÑ­»·
+    for (int i = x+1; i <= N; i += lowbit(i))tr[i] += c;//æ³¨æ„æ˜¯i<=N,ä¸æ˜¯i<=nï¼Œx+1æ˜¯ä¸ºäº†é˜²æ­¢x=0çš„æƒ…å†µï¼Œx=0æ—¶ä¼šæ­»å¾ªç¯
 }
 int sum(int x)
 {
@@ -28,36 +28,36 @@ int sum(int x)
     return res;
 }
 
-void add1(int x, int c)//Ê÷×´Êı×éÇóLIS,Á½¸öº¯ÊıÖĞ¶¼Ö»Ğè°Ñ+=¸Ä³Émax
+void add1(int x, int c)//æ ‘çŠ¶æ•°ç»„æ±‚LIS,ä¸¤ä¸ªå‡½æ•°ä¸­éƒ½åªéœ€æŠŠ+=æ”¹æˆmax
 {
     for (int i = x+1; i <= N; i += lowbit(i))tr[i] = max(tr[i], c);  
 }
-int sum1(int x)//Ê÷×´Êı×éÇóLIS
+int sum1(int x)//æ ‘çŠ¶æ•°ç»„æ±‚LIS
 {
     int res = 0;
     for (int i = x+1; i; i -= lowbit(i))res = max(res, tr[i]);
     return res;
 }
 /*
-Ê÷×´LISµÄmainº¯ÊıÄÚ£º
+æ ‘çŠ¶LISçš„mainå‡½æ•°å†…ï¼š
 /for (int i = 1; i <= n; i++)
 {
-    f[i] = sum(a[i]) + 1;//µ¥µ÷½µĞ´·¨£ºa[i]->N-a[i]+1,ÏÂÃæµÄaddÒ²Ò»Ñù
+    f[i] = sum(a[i]) + 1;//å•è°ƒé™å†™æ³•ï¼ša[i]->N-a[i]+1,ä¸‹é¢çš„addä¹Ÿä¸€æ ·
     add(a[i], f[i]);
 }
 */
 
 
-int n, m;//ÇóÇø¼ä×î´óÖµ
-int d[N];
+int d[N];//æ±‚åŒºé—´æœ€å¤§å€¼
 void add(int x, int c)
 {
-    d[x] = c;
-    for (int i = x+1; i <= n; i += lowbit(i))tr[i] = max(tr[i], c);
+    d[x+1] = c;
+    for (int i = x+1; i <= N; i += lowbit(i))tr[i] = max(tr[i], c);
 }
 int query(int x, int y)
 {
     int res = 0;
+    x++,y++;
     while (x <= y)
     {
         while (y - x >= lowbit(y))
