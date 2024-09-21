@@ -17,6 +17,7 @@
 + [树状数组 Fenwick](数据结构/树状数组/)
 + [线段树 Segment Tree](数据结构/线段树/)
 + [RMQ](数据结构/RMQ/)
++ [矩阵 Matrix](数据结构/矩阵/)
 
 ### 图论 Graph
 + [最近公共祖先 LCA](图论/LCA/)
@@ -29,7 +30,7 @@
 + [树链剖分 HLD](图论/树链剖分/)
 + [二分图 Bipartite Graph](图论/二分图/)
 + [网络流 Flow](图论/网络流/)
-+ [支配书 Dominator Tree](图论/支配树/)
++ [支配树 Dominator Tree](图论/支配树/)
 
 ### 数学 Math
 + [数论 Number Theory](数学/数论/)
@@ -38,8 +39,6 @@
   + [欧拉函数 Euler's Totient Function](数学/数论/欧拉函数/)
   + [中国剩余定理 CRT](数学/数论/中国剩余定理/)
 + [多项式 Polynomial](数学/多项式/)
-+ [线性代数 Linear Algebra](数学/线性代数/)
-  + [矩阵 Matrix](数学/线性代数/矩阵/)
 + [组合数学 Combinatorics](数学/组合数学/)
   + [组合数 Combination](数学/组合数学/组合数/)
 
@@ -57,4 +56,4 @@
   + [二维基础 2D Basic](计算几何/二维计算几何/二维基础/)
 
 ### 杂项 Miscellaneous
-+ [日期时间相关 Date](杂项/时间日期序列处理/)
++ [日期时间相关 Date](计算几何/时间日期序列处理/)
