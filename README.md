@@ -17,7 +17,6 @@
 + [树状数组 Fenwick](数据结构/树状数组/)
 + [线段树 Segment Tree](数据结构/线段树/)
 + [RMQ](数据结构/RMQ/)
-+ [矩阵 Matric](数据结构/矩阵/)
 
 ### 图论 Graph
 + [最近公共祖先 LCA](图论/LCA/)
@@ -39,6 +38,8 @@
   + [欧拉函数 Euler's Totient Function](数学/数论/欧拉函数/)
   + [中国剩余定理 CRT](数学/数论/中国剩余定理/)
 + [多项式 Polynomial](数学/多项式/)
++ [线性代数 Linear Algebra](数学/线性代数/)
+  + [矩阵 Matrix](数学/线性代数/矩阵/)
 + [组合数学 Combinatorics](数学/组合数学/)
   + [组合数 Combination](数学/组合数学/组合数/)
 
@@ -48,7 +49,7 @@
 + [AC自动机 Aho-Corasick Automaton](字符串/AC自动机/)
 + [后缀数组 Suffix Array](字符串/后缀数组/)
 + [后缀自动机 SAM](字符串/后缀自动机/)
-+ [Manacger](字符串/Manacher/)
++ [Manacher](字符串/Manacher/)
 + [回文自动机 PAM](字符串/回文自动机/)
 
 ### 计算几何 Geometry
