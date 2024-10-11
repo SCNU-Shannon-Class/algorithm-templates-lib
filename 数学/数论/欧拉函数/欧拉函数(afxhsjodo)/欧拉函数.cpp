@@ -14,14 +14,14 @@ int phi(int x)
 }
 
 const int N = 1e5 + 5;
-int prime[N], cnt;     // prime[]´æ´¢ËùÓĞËØÊı
-int euler[N];           // ´æ´¢Ã¿¸öÊıµÄÅ·À­º¯Êı
-bool st[N];         // st[x]´æ´¢xÊÇ·ñ±»É¸µô
+int prime[N], cnt;     // prime[]å­˜å‚¨æ‰€æœ‰ç´ æ•°
+int euler[N];           // å­˜å‚¨æ¯ä¸ªæ•°çš„æ¬§æ‹‰å‡½æ•°
+bool st[N];         // st[x]å­˜å‚¨xæ˜¯å¦è¢«ç­›æ‰
 
-void get_euler(int n)//É¸·¨ÇóÅ·À­º¯Êı
+void get_euler(int n)//ç­›æ³•æ±‚æ¬§æ‹‰å‡½æ•°
 {
 	euler[1] = 1;
-	for(int i=2;i<=n/i;i++)
+	for(int i = 2;i <= n; i++)
 	{
 		if (!st[i])
 		{
