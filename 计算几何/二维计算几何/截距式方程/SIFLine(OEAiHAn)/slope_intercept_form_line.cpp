@@ -50,7 +50,7 @@ struct line
         }
     }
 
-    //rot为 true时构造两点中垂线
+    //rot为true时构造两点中垂线
     line(pll l, pll r, bool rot)
     {
         if (!rot)
