@@ -1,8 +1,8 @@
 const int N = 1e5 + 5;
-int pr[N], cnt, fac[N];//fac记录最小质因子
+int pr[N], cnt, fac[N];//fac璁板綍鏈�灏忚川鍥犲瓙
 
-//线性筛
-void get_prmie(int n)//不要在这里输入N，有越界风险
+//绾挎�х瓫
+void get_prime(int n)//涓嶈鍦ㄨ繖閲岃緭鍏锛屾湁瓒婄晫椋庨櫓
 {
 	for (int i = 2; i <= n; i++)
 	{
