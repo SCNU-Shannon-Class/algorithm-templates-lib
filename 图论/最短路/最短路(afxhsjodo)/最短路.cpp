@@ -27,21 +27,20 @@ void dijkstra(int s)
 	memset(dist, 0x3f, sizeof dist);
 	memset(st, 0, sizeof st);
 	priority_queue<PII, vector<PII>, greater<PII>>q;
-	dist[1] = 0;
-	q.push({0,1});
+	dist[s] = 0;
+	q.push({ 0,s });
 	while (q.size())
 	{
 		auto t = q.top();
 		q.pop();
-		if (st[t.y] = 1)continue;
+		if (st[t.y])continue;
 		st[t.y] = 1;
-		for (int i = 0; i < g[t.y].size(); i++)
+		for (auto& [v,w] : g[t.y])
 		{
-			auto v = g[t.y][i];
-			if (dist[v.y] > dist[t.y] + v.x)
+			if (dist[v] > dist[t.y] + w)
 			{
-				dist[v.y] = dist[t.y] + v.x;
-				q.push({ dist[v.y],v.y });
+				dist[v] = dist[t.y] + w;
+				q.push({ dist[v],v });
 			}
 		}
 	}
@@ -53,7 +52,7 @@ void spfa(int s)
 	memset(st, 0, sizeof st);
 	queue<int>q;
 	dist[1] = 0;
-	st[1] = 0;//¿É²»Ğ´
+	st[1] = 0;//å¯ä¸å†™
 	q.push(1);
 	while (q.size())
 	{
@@ -91,12 +90,12 @@ void topsort()
 	}
 }
 
-//spfaÇó¸º»·
+//spfaæ±‚è´Ÿç¯
 int cnt[N];
 bool spfa()
 {
 	memset(cnt, 0, sizeof cnt);
-	queue<int>q;//tleÁË¿ÉÒÔ»»³ÉstackÊÔÊÔ
+	queue<int>q;//tleäº†å¯ä»¥æ¢æˆstackè¯•è¯•
 	q.push(0);
 	dist[0] = 0;
 	for (int i = 1; i <= n; i++)q.push(i), st[i] = 1;
@@ -112,7 +111,7 @@ bool spfa()
 			{
 				dist[v.x] = dist[u] + v.y;
 				cnt[v.x] = cnt[u] + 1;
-				if (cnt[v.x] >= n)return 1;//·µ»Ø1±íÊ¾ÓĞ¸º»·
+				if (cnt[v.x] >= n)return 1;//è¿”å›1è¡¨ç¤ºæœ‰è´Ÿç¯
 				if (!st[v.x])
 				{
 					q.push(v.x);
@@ -121,5 +120,5 @@ bool spfa()
 			}
 		}
 	}
-	return 0;//Ã»ÓĞ¸º»·
+	return 0;//æ²¡æœ‰è´Ÿç¯
 }
