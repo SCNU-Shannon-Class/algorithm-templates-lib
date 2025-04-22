@@ -21,7 +21,6 @@ const int N = 1e5 + 5;
 int dist[N];
 vector<PII>g[N];
 bool st[N];
-
 void dijkstra(int s)
 {
 	memset(dist, 0x3f, sizeof dist);
@@ -31,15 +30,15 @@ void dijkstra(int s)
 	q.push({ 0,s });
 	while (q.size())
 	{
-		auto t = q.top();
+		auto& [dis, u] = q.top();
 		q.pop();
-		if (st[t.y])continue;
-		st[t.y] = 1;
-		for (auto& [v,w] : g[t.y])
+		if (st[u])continue;
+		st[u] = 1;
+		for (auto& [v,w] : g[u])
 		{
-			if (dist[v] > dist[t.y] + w)
+			if (dist[v] > dist[u] + w)
 			{
-				dist[v] = dist[t.y] + w;
+				dist[v] = dist[u] + w;
 				q.push({ dist[v],v });
 			}
 		}
@@ -82,11 +81,8 @@ void topsort()
 	{
 		int u = q.front();
 		q.pop();
-		for (int i = 0; i < g[u].size(); i++)
-		{
-			int v = g[u][i].y;
-			if (--du[v] == 0)top.push_back(v);
-		}
+		for (auto& [v, w] : g[u])
+			if (--du[v] == 0)top.push_back(v), q.push(v);
 	}
 }
 
